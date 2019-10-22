@@ -32,8 +32,11 @@ void FahrenheitCelsius::currentTextChanged(const QString &arg1)
         ui->labelResultado->setText("Em Fahrenheit:");
     }
 
-    ui->resultado->setText("");
-    ui->resultado->setPlaceholderText("Resultado");
+    if(ui->inputUsuario->text() == ""){
+        ui->resultado->setText("");
+        ui->resultado->setPlaceholderText("Resultado");
+    }else
+        returnPressed();
 }
 
 void FahrenheitCelsius::returnPressed()
