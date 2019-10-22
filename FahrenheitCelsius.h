@@ -15,6 +15,11 @@ public:
     FahrenheitCelsius(QWidget *parent = nullptr);
     ~FahrenheitCelsius();
 
+private slots:
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_inputUsuario_returnPressed();
+
 private:
     Ui::FahrenheitCelsius *ui;
 };
