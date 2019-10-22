@@ -16,9 +16,9 @@ public:
     ~FahrenheitCelsius();
 
 private slots:
-    void on_comboBox_currentTextChanged(const QString &arg1);
+    void currentTextChanged(const QString &arg1);
 
-    void on_inputUsuario_returnPressed();
+    void returnPressed();
 
 private:
     Ui::FahrenheitCelsius *ui;
