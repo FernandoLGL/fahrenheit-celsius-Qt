@@ -45,6 +45,12 @@ void FahrenheitCelsius::returnPressed()
 
     qDebug() << "O input foi " << input;
 
+    if(input == ""){
+        ui->resultado->setText("");
+        ui->resultado->setPlaceholderText("Resultado");
+        return;
+    }
+
     double resultado{ input.toDouble() };
 
     QString saida{};
