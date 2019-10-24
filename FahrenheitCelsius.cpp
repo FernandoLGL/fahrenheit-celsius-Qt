@@ -45,7 +45,19 @@ void FahrenheitCelsius::returnPressed()
 
     qDebug() << "O input foi " << input;
 
-    if(input == ""){
+    QRegExp re("\\d*");
+
+    QPalette pal = ui->inputUsuario->palette();
+    if(!re.exactMatch(input)){
+        pal.setColor(QPalette::Text, Qt::red);
+        ui->resultado->setPalette(pal);
+        ui->resultado->setText("Error! Please enter just digits.");
+        return;
+    }
+
+    if(input == "" || !re.exactMatch(input)){
+        pal.setColor(QPalette::Text, Qt::black);
+        ui->resultado->setPalette(pal);
         ui->resultado->setText("");
         ui->resultado->setPlaceholderText("Resultado");
         return;
@@ -67,5 +79,7 @@ void FahrenheitCelsius::returnPressed()
         saida += " ºF";
     }
 
+    pal.setColor(QPalette::Text, Qt::black);
+    ui->resultado->setPalette(pal);
     ui->resultado->setText(saida);
 }
